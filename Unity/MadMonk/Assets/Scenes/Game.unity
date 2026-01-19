@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531037fe2340ce14986ceda95b835a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Gameplay.PieceSpawner
-  piecePrefab: {fileID: -4699454901098827562, guid: 59b9b9d014c730e4cabba130933f0bfc, type: 3}
+  piecePrefab: {fileID: 1819512286238524566, guid: 59b9b9d014c730e4cabba130933f0bfc, type: 3}
   spawnPoint: {fileID: 1617085046}
 --- !u!1 &1311037510
 GameObject:
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Grid.HexGridGenerator
   radius: 3
-  cellPrefab: {fileID: 2585902570340979321, guid: e6ed75b0265ab7e4d9be383e5bc70604, type: 3}
+  cellPrefab: {fileID: 6913670338267071543, guid: 800a31d0d63abbc43b9957b64f5725b3, type: 3}
   container: {fileID: 1232762391}
 --- !u!1 &1617085045
 GameObject:
