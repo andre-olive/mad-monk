@@ -2,12 +2,14 @@ using UnityEngine;
 using Game.Board;
 using Game.Gameplay;
 using Game.UI;
+using System.Linq;
 
 namespace Game.Core
 {
     public class GameManager : Singleton<GameManager>
     {
         [SerializeField] private WinLosePopup popup;
+        [SerializeField] private LevelSO levelSO;
 
         protected override void Awake()
         {
@@ -61,6 +63,11 @@ namespace Game.Core
             {
                 popup.ShowLose();
             }
+        }
+
+        public HexCellSO GetHexcellSO(int index)
+        {
+            return levelSO.hexcellList.FirstOrDefault(x => x.index == index);
         }
     }
 }

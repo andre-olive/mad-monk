@@ -1112,6 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Core.GameManager
   popup: {fileID: 154935713}
+  levelSO: {fileID: 11400000, guid: 0e265a5dcd7ebf544bf31c8aa5847b25, type: 2}
 --- !u!1 &2044261232
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
 using Game.Grid;
 using TMPro;
+using Game.Core;
 
 namespace Game.Board
 {
@@ -12,11 +13,27 @@ namespace Game.Board
         public bool IsOccupied => Value > 0;
 
         public TextMeshPro textMeshPro;
+        public MeshRenderer meshBG;
+        public MeshRenderer meshFront;
 
         public void SetValue(int value)
         {
             Value = value;
             textMeshPro.text = value.ToString();
+
+            var hexSO = GameManager.Instance.GetHexcellSO(value);
+            if (hexSO != null)
+            {
+                meshBG.material.mainTexture = hexSO.sprite_bg != null ? hexSO.sprite_bg.texture : null;
+
+                if (hexSO.sprite_front != null)
+                {
+                    meshFront.material.mainTexture = hexSO.sprite_front.texture;
+                    meshFront.gameObject.SetActive(true);
+                }
+                else
+                    meshFront.gameObject.SetActive(false);
+            }
         }
 
         public void Clear()

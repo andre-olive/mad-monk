@@ -457,3 +457,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Board.HexCell
   textMeshPro: {fileID: 7878969411398568679}
+  meshBG: {fileID: 8500378852374839861}
+  meshFront: {fileID: 2215048562175274669}
