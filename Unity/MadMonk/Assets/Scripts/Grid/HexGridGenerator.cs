@@ -7,8 +7,8 @@ namespace Game.Grid
     public class HexGridGenerator : Singleton<HexGridGenerator>
     {
         [Header("Grid")]
-        [SerializeField] private int radius = 3;
-        [SerializeField] private Board.HexCell cellPrefab;
+        [SerializeField] private int radius = 2;
+        [SerializeField] private HexCell cellPrefab;
         [SerializeField] private Transform container;
 
         protected override void Awake()
@@ -27,20 +27,28 @@ namespace Game.Grid
                 int rMax = Mathf.Min(radius, -q + radius);
 
                 for (int r = rMin; r <= rMax; r++)
-                {
-                    var coord = new HexCoord(q, r);
-                    Vector3 pos = HexMetrics.AxialToWorld(coord);
-
-                    var cell = Instantiate(cellPrefab, pos, Quaternion.identity, container);
-                    cell.name = $"Hex {coord}";
-                    cell.Coord = coord;
-                    cell.SetValue(0);
-
-                    HexBoard.Instance.Grid.Add(coord, cell);
-                }
+                    GenerateHex(new HexCoord(q, r));
             }
 
+            // Cria os hexagonos das pontas (para radius == 2)
+            GenerateHex(new HexCoord(-3, 2));
+            GenerateHex(new HexCoord(-1, -2));
+            GenerateHex(new HexCoord(1, 2));
+            GenerateHex(new HexCoord(3, -2));
+
             Debug.Log($"Grid criado com {HexBoard.Instance.Grid.Count} células.");
+        }
+
+        private void GenerateHex(HexCoord hexCoord)
+        {
+            Vector3 pos = HexMetrics.AxialToWorld(hexCoord);
+
+            var cell = Instantiate(cellPrefab, pos, Quaternion.identity, container);
+            cell.name = $"Hex {hexCoord}";
+            cell.Coord = hexCoord;
+            cell.SetValue(0);
+
+            HexBoard.Instance.Grid.Add(hexCoord, cell);
         }
 
         private void Clear()

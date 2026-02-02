@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22aee4f1ee5e61244bfcdc33c78fb322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Grid.HexGridGenerator
-  radius: 3
+  radius: 2
   cellPrefab: {fileID: 6913670338267071543, guid: 800a31d0d63abbc43b9957b64f5725b3, type: 3}
   container: {fileID: 1232762391}
 --- !u!1 &1617085045
