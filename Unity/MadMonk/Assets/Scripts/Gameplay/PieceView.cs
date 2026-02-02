@@ -11,6 +11,9 @@ namespace Game.Gameplay
 
         public TextMeshPro textMeshPro;
 
+        [SerializeField] private Animator animator;
+        private static readonly int IsDrag = Animator.StringToHash("IsDrag");
+
         public void Initialize(int value, Vector3 origin)
         {
             textMeshPro.text = value.ToString();
@@ -23,5 +26,11 @@ namespace Game.Gameplay
         {
             transform.position = OriginPosition;
         }
+
+        public void Animator_SetDrag(bool isActive)
+        {
+            animator.SetBool(IsDrag, isActive);
+        }
+
     }
 }

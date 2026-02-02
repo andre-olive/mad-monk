@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5409346710340404065}
   - component: {fileID: 1819512286238524566}
   - component: {fileID: 8683397135014216778}
+  - component: {fileID: 4763877532606500566}
   m_Layer: 0
   m_Name: HexCell Piece
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Gameplay.PieceView
   textMeshPro: {fileID: 6968199991785059758}
+  animator: {fileID: 4763877532606500566}
 --- !u!114 &8683397135014216778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +63,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7ef3809f1800d4da25eff6ca0846cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Gameplay.PieceInput
+--- !u!95 &4763877532606500566
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300265691308231637}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 265641b442dfc2c49a5f1c8684f5266d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1500920727512002827
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,9 @@ namespace Game.Board
         public MeshRenderer meshBG;
         public MeshRenderer meshFront;
 
+        [SerializeField] private Animator animator;
+        private static readonly int Merged = Animator.StringToHash("Merged");
+
         public void SetValue(int value)
         {
             Value = value;
@@ -30,6 +33,7 @@ namespace Game.Board
                 {
                     meshFront.material.mainTexture = hexSO.sprite_front.texture;
                     meshFront.gameObject.SetActive(true);
+                    animator.SetTrigger(Merged);
                 }
                 else
                     meshFront.gameObject.SetActive(false);
