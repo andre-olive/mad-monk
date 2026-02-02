@@ -15,4 +15,4 @@ MonoBehaviour:
   index: 2
   displayName: 
   sprite_bg: {fileID: 21300000, guid: 1dbbbc0b0755db44e86195fb2cd436a4, type: 3}
-  sprite_front: {fileID: 21300000, guid: e93cb21134263bd478098a63c920c06d, type: 3}
+  sprite_front: {fileID: 21300000, guid: 81e6ea8085b598946b65cd35183983de, type: 3}
