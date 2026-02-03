@@ -10,6 +10,8 @@ namespace Game.Gameplay
         public Vector3 OriginPosition { get; private set; }
 
         public TextMeshPro textMeshPro;
+        public MeshRenderer meshBG;
+        public MeshRenderer meshFront;
 
         [SerializeField] private Animator animator;
         private static readonly int IsDrag = Animator.StringToHash("IsDrag");
@@ -20,6 +22,20 @@ namespace Game.Gameplay
             Value = value;
             OriginPosition = origin;
             transform.position = origin;
+
+            var hexSO = Core.GameManager.Instance.GetHexcellSO(value);
+            if (hexSO != null)
+            {
+                meshBG.material.mainTexture = hexSO.sprite_bg != null ? hexSO.sprite_bg.texture : null;
+
+                if (hexSO.sprite_front != null)
+                {
+                    meshFront.material.mainTexture = hexSO.sprite_front.texture;
+                    meshFront.gameObject.SetActive(true);
+                }
+                else
+                    meshFront.gameObject.SetActive(false);
+            }
         }
 
         public void ResetPosition()
